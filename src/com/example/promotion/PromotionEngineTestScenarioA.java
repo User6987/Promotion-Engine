@@ -9,6 +9,7 @@ class PromotionEngineTestScenarioA {
 	@Test
 	void testExecuteCheckoutA() {
 		try {
+			System.out.println("::Enter Input according to Scenario A::");
 			PromotionEngine pe = new PromotionEngine();
 			int total = pe.executeCheckout();
 			assertEquals(total,100);
