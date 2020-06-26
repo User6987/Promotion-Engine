@@ -64,20 +64,16 @@ public class CheckoutCart {
 											}
 										});
 									}
-								}
-								else {
-									var wrapper3 = new Object(){ int min=-1; };
-
+									int cost = promo.cost.get(present)*wrapper3.min;
 									for(int j=0;j<temp.size();j++) {
-										String s = temp.get(j);
-										promo.promos.get(present).forEach((k2,v2) -> {
-											if(!k2.equals(s)) {
-												if((wrapper3.min>ci.items.get(s)/v2) || wrapper3.min<0) {
-													wrapper3.min = ci.items.get(s)/v2;
-												}
-											}
-										});
+										int v2 = ci.items.get(temp.get(j));
+										int d = v2-(wrapper3.min*(ci.items.get(id)/v2));
+										if(d >=0) {
+											System.out.println(d+"   "+temp.get(j));
+											cost += d*item.getPrice(temp.get(j));
+										}
 									}
+									wrapper.total += cost;
 								}
 							});	
 						}
