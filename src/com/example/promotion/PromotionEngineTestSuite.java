@@ -8,7 +8,7 @@ import org.junit.runners.Suite.SuiteClasses;
 
 @RunWith(Suite.class)
 
-@SuiteClasses({PromotionEngineTestScenarioA.class})
+@SuiteClasses({PromotionEngineTestScenarioA.class, PromotionEngineTestScenarioB.class})
 
 class PromotionEngineTestSuite {
 
