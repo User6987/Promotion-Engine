@@ -84,8 +84,7 @@ public class CheckoutCart {
 									wrapper.total += cost;
 								}
 							});
-						}
-						
+						}		
 					}
 					else {
 						if(promo.promos.get(present).containsKey(k)) {
@@ -101,8 +100,7 @@ public class CheckoutCart {
 						}
 					}
 				}
-			});
-			
+			});	
 		}
 		catch(Exception e) {
 			System.out.print(e.toString());

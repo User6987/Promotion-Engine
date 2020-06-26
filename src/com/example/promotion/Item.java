@@ -1,5 +1,11 @@
 package com.example.promotion;
 
+/*
+ * New item's and prices can be added in this class
+ * If a new item is added, the corresponding set and get methods need to be added.
+ * And getPrice method is to be updated.
+ */
+
 public class Item {
 	int priceOfA, priceOfB, priceOfC, priceOfD;
 	
@@ -41,15 +47,21 @@ public class Item {
 	public void setPriceOfD() {
 		this.priceOfD = 15;
 	}
+	
 	public int getPrice(String s) {
+		
 		if(s.equals("A"))
 			return getPriceOfA();
+		
 		else if(s.equals("B"))
 			return getPriceOfB();
+		
 		else if(s.equals("C"))
 			return getPriceOfC();
+		
 		else if(s.equals("D"))
 			return getPriceOfD();
+		
 		return -1;
 	}
 }

@@ -8,7 +8,7 @@ public class PromotionEngine {
 		try {
 			int total = 0;
 			Scanner in = new Scanner(System.in);
-			System.out.print("Enter total number of items in cart:: ");
+			System.out.print("Enter total number of unique items in cart:: ");
 			int total_items = in.nextInt();
 				
 			if(total_items <=0) {
