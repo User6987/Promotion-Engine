@@ -12,6 +12,9 @@ public class CheckoutCart {
 				for(int i=0;i<promo.promos.size();i++) {
 					int present = i;
 					if(promo.promos.get(present).size()>1) {
+						promo.promos.get(present).forEach((k1, v1) ->{
+							
+						});
 						
 					}
 					else {
@@ -19,7 +22,7 @@ public class CheckoutCart {
 							int promoSelectedItems = promo.promos.get(present).get(k);
 							int promoAppliedItem = value/promoSelectedItems;
 							if(promoAppliedItem>0) {
-								
+								tempTotal = (promoAppliedItem*promo.cost.get(present))+((value-(promoAppliedItem*promoSelectedItems))*item.getPrice(k));
 							}
 							else {
 								tempTotal = item.getPrice(k)*value;
