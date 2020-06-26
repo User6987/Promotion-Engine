@@ -1,10 +1,16 @@
 package com.example.promotion;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class CheckoutCart {
 	
 	public int checkout(Item item, CartItems ci, Promotions promo) {
+		
 		var wrapper = new Object(){ int total = 0; };
 		try {
+			List<String> checkedout = new ArrayList<String>();
+			List<Boolean> checked = new ArrayList<Boolean>();
 			ci.items.forEach((k,v) -> {
 				String id = k;
 				int value = v;
@@ -18,11 +24,13 @@ public class CheckoutCart {
 								if(ci.items.containsKey(k1)) {
 									if(ci.items.get(k1) >= v1) {
 										wrapper1.contain = true;
-										System.out.println(ci+"  "+k1);
 									}
 									else {
 										throw new Exception();
 									}
+								}	
+								else {
+									throw new Exception();
 								}
 							}
 							catch(Exception e) {
@@ -30,6 +38,16 @@ public class CheckoutCart {
 							}							
 						});
 						if(wrapper1.contain) {
+							promo.promos.get(present).forEach((k1, v1) ->{
+								
+								List<String> temp = new ArrayList<String>();
+								for(int j=0;j<checkedout.size();j++) {
+									if(!checked.get(j)) {
+										temp.add(checkedout.get(j));
+										checked.set(j, true);
+									}
+								}
+							});
 							
 						}
 						else {
