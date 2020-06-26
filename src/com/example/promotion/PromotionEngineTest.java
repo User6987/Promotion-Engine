@@ -8,7 +8,14 @@ class PromotionEngineTest {
 
 	@Test
 	void testExecuteCheckout() {
-		PromotionEngine pe = new PromotionEngine();
+		try {
+			PromotionEngine pe = new PromotionEngine();
+			int total = pe.executeCheckout();
+			assertEquals(total,100);
+		}
+		catch(Exception e) {
+			System.out.print("Something went wrong!!");
+		}
 	}
 
 }
