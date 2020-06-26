@@ -4,10 +4,10 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
-class PromotionEngineTest {
+class PromotionEngineTestScenarioA {
 
 	@Test
-	void testExecuteCheckout() {
+	void testExecuteCheckoutA() {
 		try {
 			PromotionEngine pe = new PromotionEngine();
 			int total = pe.executeCheckout();
@@ -17,5 +17,4 @@ class PromotionEngineTest {
 			System.out.print("Something went wrong!!");
 		}
 	}
-
 }
