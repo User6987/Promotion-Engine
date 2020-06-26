@@ -39,7 +39,12 @@ public class CheckoutCart {
 						});
 						if(wrapper1.contain) {
 							promo.promos.get(present).forEach((k1, v1) ->{
-								
+								if(!checkedout.contains(k1)) {
+									checkedout.add(k1);
+									checked.add(false);
+								}
+							});
+							promo.promos.get(present).forEach((k1, v1) ->{
 								List<String> temp = new ArrayList<String>();
 								for(int j=0;j<checkedout.size();j++) {
 									if(!checked.get(j)) {
@@ -47,8 +52,8 @@ public class CheckoutCart {
 										checked.set(j, true);
 									}
 								}
-							});
-							
+								
+							});	
 						}
 						else {
 							promo.promos.get(present).forEach((k1, v1) ->{
