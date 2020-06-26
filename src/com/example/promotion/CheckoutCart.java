@@ -65,6 +65,20 @@ public class CheckoutCart {
 										});
 									}
 								}
+								else {
+									var wrapper3 = new Object(){ int min=-1; };
+
+									for(int j=0;j<temp.size();j++) {
+										String s = temp.get(j);
+										promo.promos.get(present).forEach((k2,v2) -> {
+											if(!k2.equals(s)) {
+												if((wrapper3.min>ci.items.get(s)/v2) || wrapper3.min<0) {
+													wrapper3.min = ci.items.get(s)/v2;
+												}
+											}
+										});
+									}
+								}
 							});	
 						}
 						else {
