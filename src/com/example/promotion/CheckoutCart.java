@@ -12,9 +12,34 @@ public class CheckoutCart {
 				for(int i=0;i<promo.promos.size();i++) {
 					int present = i;
 					if(promo.promos.get(present).size()>1) {
+						var wrapper1 = new Object(){ boolean contain = false; };
 						promo.promos.get(present).forEach((k1, v1) ->{
-							
+							try {
+								if(ci.items.containsKey(k1)) {
+									if(ci.items.get(k1) >= v1) {
+										wrapper1.contain = true;
+										System.out.println(ci+"  "+k1);
+									}
+									else {
+										throw new Exception();
+									}
+								}
+							}
+							catch(Exception e) {
+								wrapper1.contain = false;								
+							}							
 						});
+						if(wrapper1.contain) {
+							
+						}
+						else {
+							promo.promos.get(present).forEach((k1, v1) ->{
+								if(ci.items.containsKey(k1) && promo.promos.get(present).containsKey(k)){
+									int cost = v*item.getPrice(k1);
+									wrapper.total += cost;
+								}
+							});
+						}
 						
 					}
 					else {
