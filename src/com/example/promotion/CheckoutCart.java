@@ -8,7 +8,6 @@ public class CheckoutCart {
 			ci.items.forEach((k,v) -> {
 				String id = k;
 				int value = v;
-				System.out.println(id+"  "+value);
 				int tempTotal = 0;
 				for(int i=0;i<promo.promos.size();i++) {
 					int present = i;
@@ -16,7 +15,17 @@ public class CheckoutCart {
 						
 					}
 					else {
-						System.out.println("Products with no multiple offers");
+						if(promo.promos.get(present).containsKey(k)) {
+							int promoSelectedItems = promo.promos.get(present).get(k);
+							int promoAppliedItem = value/promoSelectedItems;
+							if(promoAppliedItem>0) {
+								
+							}
+							else {
+								tempTotal = item.getPrice(k)*value;
+							}
+							wrapper.total += tempTotal;
+						}
 					}
 				}
 			});
